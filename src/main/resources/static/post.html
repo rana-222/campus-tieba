@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#23634e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>帖子详情 - 校园贴吧</title>
+    <link rel="stylesheet" href="/style.css?v=20260908-5">
+    <link rel="stylesheet" href="/post.css?v=20260908-3">
+</head>
+<body>
+    <main class="post-page">
+        <div class="post-navigation">
+            <button id="back-button" class="back-button"><span>←</span><span class="back-text">返回论坛主页</span></button>
+            <nav id="post-breadcrumb" class="post-breadcrumb" aria-label="当前位置"></nav>
+        </div>
+        <section id="detail" class="detail-panel"></section>
+        <section class="reply-panel">
+            <h2 data-i18n="allReplies">全部回复</h2>
+            <div id="replies"></div>
+        </section>
+    </main>
+    <div class="reply-bar-spacer"></div>
+    <form id="reply-form" class="reply-bar">
+        <div id="reply-target" class="reply-target hidden"></div>
+        <div class="reply-bar-inner">
+            <textarea id="reply-content" name="content" rows="1" required maxlength="1000" data-i18n="replyPlaceholder" placeholder="写下你的回复"></textarea>
+            <button class="reply-submit" type="submit" aria-label="发布回复">➤</button>
+        </div>
+    </form>
+    <script src="/i18n.js?v=20260908-6"></script>
+    <script src="/post.js?v=20260908-3"></script>
+</body>
+</html>

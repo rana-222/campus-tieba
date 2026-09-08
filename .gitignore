@@ -1,0 +1,32 @@
+# 构建产物与运行时
+target/
+logs/
+*.log
+debug.log
+
+# IDE 与工具目录
+.vscode/
+.idea/
+.cursor/
+.deep-copilot/
+.trae/
+.github/
+
+# 上传数据（运行时生成，不入库）
+uploads/
+tieba-data/
+
+# 临时诊断文件
+diag*.txt
+ping*.txt
+ping[0-9]*.txt
+kill*.txt
+killed.txt
+procs.txt
+restart*.txt
+restarted*.txt
+style_check*.txt
+提示词.txt
+
+# 根目录下过时的旧版数据库脚本与二进制（现行版本在 src/main/resources/database/）
+/database/

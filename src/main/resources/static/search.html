@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#23634e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>搜索结果 - 校园贴吧</title>
+    <link rel="stylesheet" href="/style.css?v=20260908-5">
+    <link rel="stylesheet" href="/search.css?v=20260908-3">
+</head>
+<body>
+<main class="search-page">
+    <a class="search-back" href="/forum-main.html">← 返回论坛主页</a>
+    <section class="search-shell">
+        <form id="search-page-form" class="search-bar"><input id="search-query" name="q" required placeholder="搜索帖子标题、内容或用户昵称"><button type="submit">搜索</button></form>
+        <div class="search-mode"><button type="button" data-mode="posts" class="active">帖子</button><button type="button" data-mode="users">用户</button></div>
+    </section>
+    <section id="search-page-results" class="search-page-results"></section>
+    <button id="search-load-more" class="load-more" type="button" hidden>加载更多</button>
+</main>
+<script src="/search.js?v=20260908-3"></script>
+</body>
+</html>

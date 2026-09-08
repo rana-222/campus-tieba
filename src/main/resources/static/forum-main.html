@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#23634e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>校园贴吧 - 论坛</title>
+    <link rel="stylesheet" href="/style.css?v=20260908-5">
+    <link rel="stylesheet" href="/forum-ui.css?v=20260908-5">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand"><span class="brand-mark">T</span><span><span data-i18n="brand">校园贴吧</span><small data-i18n="brandSub">Campus Tieba</small></span></div>
+    <button class="topbar-menu-toggle" id="topbar-menu-toggle" aria-label="打开菜单">☰</button>
+    <nav id="boards">
+        <button class="board active" data-board="" data-i18n="recommend">推荐帖子</button>
+        <button class="board" data-board="all" data-i18n="browseBoards">浏览分区</button>
+    </nav>
+    <form id="main-search-form" class="topbar-search"><input name="q" type="search" placeholder="搜索"><button type="submit" aria-label="搜索">⌕</button></form>
+    <div class="top-actions">
+        <button id="logout-button" class="logout-button" data-i18n="logout">退出登录</button>
+    </div>
+</header>
+<aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-sheet">
+        <div class="drawer-head"><strong>校园贴吧</strong><button id="drawer-close" aria-label="关闭">✕</button></div>
+        <form id="mobile-search-form" class="mobile-search"><input name="q" type="search" placeholder="搜索帖子或用户"><button type="submit" aria-label="搜索">⌕</button></form>
+        <nav class="drawer-nav" id="drawer-nav">
+            <button data-board="" class="active">推荐帖子</button>
+            <button data-board="all">浏览分区</button>
+            <button data-view="home">我的主页</button>
+            <button data-view="favorites">我的收藏</button>
+            <button data-view="history">浏览记录</button>
+            <button data-view="notifications">通知</button>
+            <button data-view="settings">设置</button>
+        </nav>
+        <button class="drawer-logout" id="mobile-logout-button" data-i18n="logout">退出登录</button>
+    </div>
+</aside>
+
+<main class="layout">
+    <aside class="profile">
+        <div class="profile-head"><div class="avatar large" id="sidebar-avatar">校</div><div><strong id="profile-name">校园同学</strong><span id="profile-id">ID: 00000002</span></div></div>
+        <div class="profile-stat">
+            <span><b id="follow-count">0</b><span data-i18n="follow">关注</span></span>
+            <span><b id="like-count">0</b><span data-i18n="likes">获赞</span></span>
+            <span><b id="favorite-count">0</b><span data-i18n="favorites">收藏</span></span>
+        </div>
+        <button class="settings" id="notifications-button" data-view="notifications" data-i18n="notifications">◌ 通知</button>
+        <div class="profile-menu">
+            <button data-view="home" data-i18n="myHome">◈ 我的主页</button>
+            <button data-view="favorites" data-i18n="myFavorites">♡ 我的收藏</button>
+            <button data-view="history" data-i18n="myHistory">◷ 浏览记录</button>
+            <button id="settings-button" data-i18n="settings">⚙ 设置</button>
+        </div>
+    </aside>
+    <section class="feed-wrap">
+        <div class="feed-heading">
+            <div><span class="eyebrow" data-i18n="today">TODAY ON CAMPUS</span><h2 id="feed-title" data-i18n="recommend">推荐帖子</h2></div>
+            <div id="board-sort-switch" class="board-sort-switch hidden"><button type="button" data-sort="latest" class="active">最新</button><button type="button" data-sort="recommended">推荐</button></div>
+            <button class="compose" id="compose-button" data-i18n="compose">＋ 发布帖子</button>
+        </div>
+        <nav id="board-breadcrumb" class="board-breadcrumb" aria-label="当前位置"></nav>
+        <div id="board-tabs" class="board-tabs hidden"></div>
+        <div id="board-overview" class="board-overview hidden"></div>
+        <div id="subboard-preview" class="subboard-preview hidden"></div>
+        <div id="feed" class="feed" aria-live="polite"></div>
+        <div id="loading" class="loading" data-i18n="scrollHint">向下滚动加载更多</div>
+    </section>
+    <aside class="trending">
+        <div class="trend-head"><h3 data-i18n="hotBoards">热门分区</h3><button id="all-boards" data-i18n="allBoards">全部</button></div>
+        <div id="trending-list"></div>
+        <div class="notice"><span>✦</span><div><strong id="notice-title" data-i18n="notice">校园公告</strong><p id="notice-content" data-i18n="noticeText">本周五晚 8 点，图书馆将进行网络维护。</p></div></div>
+    </aside>
+</main>
+<div id="modal-root"></div>
+<script src="/i18n.js?v=20260908-6"></script>
+    <script src="/forum-main.js?v=20260908-6"></script>
+</body>
+</html>

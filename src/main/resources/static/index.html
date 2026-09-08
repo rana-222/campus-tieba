@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#23634e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>校园贴吧</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="auth" class="auth-shell">
+    <section class="auth-art">
+        <span class="eyebrow">CAMPUS COMMUNITY</span>
+        <h1>校园贴吧</h1>
+        <p>在同一片校园里，交换灵感、经验和日常。</p>
+        <div class="art-line"></div>
+        <small>连接每一个值得被看见的校园瞬间</small>
+    </section>
+    <section class="auth-panel">
+        <div class="mode-switch">
+            <button class="active" data-mode="user">用户登录</button>
+            <button data-mode="admin">管理员登录</button>
+        </div>
+        <form id="login-form">
+            <label>账号
+                <input id="account" required autocomplete="username" placeholder="输入账号">
+            </label>
+            <label>密码
+                <input id="password" type="password" required autocomplete="current-password" placeholder="输入密码">
+            </label>
+            <p id="auth-error" class="error"></p>
+            <button class="primary" type="submit">进入贴吧</button>
+        </form>
+        <form id="register-form" hidden>
+            <label>账号
+                <input id="reg-account" required placeholder="设置登录账号">
+            </label>
+            <label>昵称
+                <input id="reg-name" required placeholder="你的校园昵称">
+            </label>
+            <label>密码
+                <input id="reg-password" type="password" required placeholder="至少 8 位，含大小写及数字或特殊字符">
+            </label>
+            <p id="register-error" class="error"></p>
+            <button class="primary" type="submit">创建账号</button>
+        </form>
+        <button id="register-toggle" class="text-button">新同学？注册账号</button>
+    </section>
+</div>
+<script src="/auth.js"></script>
+</body>
+</html>
