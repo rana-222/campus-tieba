@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1230" width="1600" height="1230">
+  <rect width="1600" height="1230" fill="#ffffff"/>
+  <text x="800" y="40" text-anchor="middle" font-family="Microsoft YaHei" font-size="24" font-weight="bold" fill="#333">校园贴吧系统数据库物理结构图（表与外键关系）</text>
+  <defs>
+    <marker id="fk" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#555"/></marker>
+  </defs>
+  <!-- 关系连线 -->
+  <g stroke="#8888a0" stroke-width="1.7">
+    <line x1="800" y1="480" x2="800" y2="250"/>
+    <line x1="390" y1="155" x2="680" y2="510"/>
+    <line x1="390" y1="180" x2="680" y2="170"/>
+    <line x1="1210" y1="165" x2="930" y2="530"/>
+    <line x1="1210" y1="190" x2="930" y2="178"/>
+    <line x1="410" y1="640" x2="680" y2="620"/>
+    <line x1="330" y1="560" x2="745" y2="250"/>
+    <line x1="1210" y1="640" x2="930" y2="640"/>
+    <line x1="1250" y1="750" x2="410" y2="790"/>
+    <line x1="265" y1="950" x2="700" y2="688"/>
+    <line x1="380" y1="1000" x2="410" y2="790"/>
+    <line x1="535" y1="950" x2="750" y2="688"/>
+    <line x1="445" y1="950" x2="390" y2="806"/>
+    <line x1="800" y1="950" x2="800" y2="688"/>
+    <line x1="680" y1="970" x2="400" y2="806"/>
+    <line x1="1030" y1="950" x2="900" y2="688"/>
+    <line x1="1180" y1="950" x2="1300" y2="750"/>
+    <polyline points="780,100 780,62 880,62 880,100" fill="none"/>
+    <polyline points="1460,620 1515,620 1515,690 1460,690" fill="none"/>
+  </g>
+  <!-- FK 与基数标注 -->
+  <g font-family="Microsoft YaHei" font-size="13" fill="#b04a4a">
+    <text x="808" y="380">creator_id&#160;&#160;1—N</text>
+    <text x="470" y="310">user_id&#160;&#160;N—1</text>
+    <text x="500" y="163">board_id&#160;&#160;N—1</text>
+    <text x="1035" y="330">user_id&#160;&#160;N—1</text>
+    <text x="1030" y="172">board_id&#160;&#160;N—1</text>
+    <text x="492" y="608">user_id&#160;&#160;N—1</text>
+    <text x="470" y="390">board_name&#160;&#160;N—1</text>
+    <text x="1005" y="628">user_id&#160;&#160;N—1</text>
+    <text x="800" y="778">post_id&#160;&#160;N—1</text>
+    <text x="385" y="862">user_id&#160;&#160;N—1</text>
+    <text x="405" y="900">post_id&#160;&#160;N—1</text>
+    <text x="590" y="812">user_id&#160;&#160;N—1</text>
+    <text x="408" y="888">post_id&#160;&#160;N—1</text>
+    <text x="808" y="830">user_id&#160;&#160;N—1</text>
+    <text x="510" y="890">post_id&#160;&#160;N—1</text>
+    <text x="905" y="815">user_id&#160;&#160;N—1</text>
+    <text x="1198" y="860">reply_id&#160;&#160;N—1</text>
+    <text x="895" y="52">parent_id（自关联）</text>
+    <text x="1522" y="660" transform="rotate(90 1522 660)">parent_id（自关联）</text>
+  </g>
+  <!-- 表结构框 -->
+  <g font-family="Consolas" font-size="12.5" fill="#1a1a1a">
+    <!-- users -->
+    <rect x="680" y="480" width="250" height="208" rx="3" fill="#eef3fc" stroke="#3a6ea5" stroke-width="2"/>
+    <rect x="680" y="480" width="250" height="28" rx="3" fill="#3a6ea5"/>
+    <text x="805" y="499" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" font-weight="bold" fill="#ffffff">users 用户表</text>
+    <text x="692" y="524">id&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;BIGINT PK AI</text>
+    <text x="692" y="543">account&#160;&#160;&#160;&#160;VARCHAR(50) UQ</text>
+    <text x="692" y="562">password&#160;&#160;&#160;&#160;VARCHAR(120)</text>
+    <text x="692" y="581">username&#160;&#160;&#160;&#160;VARCHAR(50)</text>
+    <text x="692" y="600">avatar&#160;&#160;&#160;&#160;&#160;&#160;VARCHAR(255)</text>
+    <text x="692" y="619">background_url VARCHAR(500)</text>
+    <text x="692" y="638">banned&#160;&#160;&#160;&#160;&#160;&#160;BOOLEAN</text>
+    <text x="692" y="657">user_type&#160;&#160;&#160;&#160;ENUM(USER,ADMIN,</text>
+    <text x="722" y="676">&#160;&#160;&#160;MODERATOR)</text>
+    <text x="692" y="682" opacity="0">.</text>
+    <!-- boards -->
+    <rect x="680" y="100" width="250" height="150" rx="3" fill="#eef8ee" stroke="#3f7f3f" stroke-width="2"/>
+    <rect x="680" y="100" width="250" height="28" rx="3" fill="#3f7f3f"/>
+    <text x="805" y="119" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" font-weight="bold" fill="#ffffff">boards 版块表</text>
+    <text x="692" y="144">id&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;BIGINT PK AI</text>
+    <text x="692" y="163">name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;VARCHAR(50) UQ</text>
+    <text x="692" y="182">icon&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;VARCHAR(255)</text>
+    <text x="692" y="201">parent_id&#160;&#160;&#160;&#160;BIGINT FK→boards</text>
+    <text x="692" y="220">creator_id&#160;&#160;&#160;&#160;BIGINT FK→users</text>
+    <text x="692" y="239">hot_score&#160;&#160;&#160;&#160;INT</text>
+    <!-- user_follows -->
+    <rect x="150" y="120" width="240" height="76" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="150" y="120" width="240" height="28" rx="3" fill="#666"/>
+    <text x="270" y="139" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">user_follows 关注表</text>
+    <text x="162" y="164">user_id&#160;&#160;BIGINT PK,FK→users</text>
+    <text x="162" y="183">board_id&#160;&#160;BIGINT PK,FK→boards</text>
+    <!-- board_moderators -->
+    <rect x="1210" y="120" width="260" height="95" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="1210" y="120" width="260" height="28" rx="3" fill="#666"/>
+    <text x="1340" y="139" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">board_moderators 版主任命表</text>
+    <text x="1222" y="164">user_id&#160;&#160;&#160;BIGINT PK,FK→users</text>
+    <text x="1222" y="183">board_id&#160;&#160;&#160;BIGINT PK,FK→boards</text>
+    <text x="1222" y="202">created_at TIMESTAMP</text>
+    <!-- posts -->
+    <rect x="150" y="560" width="260" height="246" rx="3" fill="#fdf0f0" stroke="#b04a4a" stroke-width="2"/>
+    <rect x="150" y="560" width="260" height="28" rx="3" fill="#b04a4a"/>
+    <text x="280" y="579" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" font-weight="bold" fill="#ffffff">posts 帖子表</text>
+    <text x="162" y="604">id&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;BIGINT PK AI</text>
+    <text x="162" y="623">board_name&#160;&#160;&#160;VARCHAR(50) FK</text>
+    <text x="162" y="642">user_id&#160;&#160;&#160;&#160;&#160;&#160;BIGINT FK→users</text>
+    <text x="162" y="661">title&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;VARCHAR(150)</text>
+    <text x="162" y="680">content&#160;&#160;&#160;&#160;&#160;&#160;TEXT</text>
+    <text x="162" y="699">image_url&#160;&#160;&#160;&#160;VARCHAR(500)</text>
+    <text x="162" y="718">video_url&#160;&#160;&#160;&#160;VARCHAR(500)（保留）</text>
+    <text x="162" y="737">likes / favorites / views&#160;&#160;INT</text>
+    <text x="162" y="756">created_at&#160;&#160;&#160;&#160;TIMESTAMP</text>
+    <text x="162" y="775">INDEX(board_name,created_at)</text>
+    <text x="162" y="794">INDEX(user_id)</text>
+    <!-- replies -->
+    <rect x="1210" y="580" width="250" height="170" rx="3" fill="#f5f0fb" stroke="#6b4fa0" stroke-width="2"/>
+    <rect x="1210" y="580" width="250" height="28" rx="3" fill="#6b4fa0"/>
+    <text x="1335" y="599" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" font-weight="bold" fill="#ffffff">replies 回复表</text>
+    <text x="1222" y="624">id&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;BIGINT PK AI</text>
+    <text x="1222" y="643">post_id&#160;&#160;&#160;&#160;&#160;&#160;BIGINT FK→posts</text>
+    <text x="1222" y="662">user_id&#160;&#160;&#160;&#160;&#160;&#160;BIGINT FK→users</text>
+    <text x="1222" y="681">parent_id&#160;&#160;&#160;&#160;BIGINT FK→replies</text>
+    <text x="1222" y="700">content&#160;&#160;&#160;&#160;&#160;&#160;VARCHAR(1000)</text>
+    <text x="1222" y="719">likes&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;INT</text>
+    <text x="1222" y="738">created_at&#160;&#160;&#160;&#160;TIMESTAMP</text>
+    <!-- user_likes -->
+    <rect x="150" y="950" width="230" height="95" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="150" y="950" width="230" height="28" rx="3" fill="#666"/>
+    <text x="265" y="969" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">user_likes 帖子点赞表</text>
+    <text x="162" y="994">user_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="162" y="1013">post_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="162" y="1032">created_at TIMESTAMP</text>
+    <!-- user_favorites -->
+    <rect x="420" y="950" width="230" height="95" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="420" y="950" width="230" height="28" rx="3" fill="#666"/>
+    <text x="535" y="969" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">user_favorites 收藏表</text>
+    <text x="432" y="994">user_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="432" y="1013">post_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="432" y="1032">created_at TIMESTAMP</text>
+    <!-- browsing_history -->
+    <rect x="680" y="950" width="250" height="114" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="680" y="950" width="250" height="28" rx="3" fill="#666"/>
+    <text x="805" y="969" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">browsing_history 浏览记录表</text>
+    <text x="692" y="994">id&#160;&#160;&#160;&#160;&#160;&#160;&#160;BIGINT PK AI</text>
+    <text x="692" y="1013">user_id&#160;&#160;BIGINT FK, UQ(user,post)</text>
+    <text x="692" y="1032">post_id&#160;&#160;BIGINT FK, UQ(user,post)</text>
+    <text x="692" y="1051">viewed_at TIMESTAMP</text>
+    <!-- reply_likes -->
+    <rect x="990" y="950" width="230" height="95" rx="3" fill="#ffffff" stroke="#666" stroke-width="1.8"/>
+    <rect x="990" y="950" width="230" height="28" rx="3" fill="#666"/>
+    <text x="1105" y="969" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">reply_likes 回复点赞表</text>
+    <text x="1002" y="994">user_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="1002" y="1013">reply_id&#160;&#160;BIGINT PK,FK</text>
+    <text x="1002" y="1032">created_at TIMESTAMP</text>
+    <!-- site_notice -->
+    <rect x="1300" y="950" width="240" height="114" rx="3" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2" stroke-dasharray="8,5"/>
+    <rect x="1300" y="950" width="240" height="28" rx="3" fill="#b07a2a"/>
+    <text x="1420" y="969" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#ffffff">site_notice 校园公告表</text>
+    <text x="1312" y="994">id&#160;&#160;&#160;&#160;&#160;&#160;TINYINT PK（恒为1）</text>
+    <text x="1312" y="1013">title&#160;&#160;&#160;&#160;VARCHAR(200)</text>
+    <text x="1312" y="1032">content&#160;&#160;VARCHAR(1000)</text>
+    <text x="1312" y="1051">updated_at TIMESTAMP</text>
+  </g>
+  <text x="800" y="1180" text-anchor="middle" font-family="Microsoft YaHei" font-size="15" fill="#666">图例：PK=主键，UQ=唯一键，FK=外键（逻辑外键，通过应用层维护引用完整性），AI=自增。除 site_notice 外，其余 10 张表互相关联构成贴吧业务数据主体。</text>
+  <text x="800" y="1208" text-anchor="middle" font-family="Microsoft YaHei" font-size="15" fill="#666">user_follows / board_moderators / user_likes / user_favorites / reply_likes 为多对多联系的关系表，均采用复合主键防止重复数据。</text>
+</svg>

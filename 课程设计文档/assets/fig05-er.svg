@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1150" width="1600" height="1150">
+  <rect width="1600" height="1150" fill="#ffffff"/>
+  <text x="800" y="44" text-anchor="middle" font-family="Microsoft YaHei" font-size="24" font-weight="bold" fill="#333">校园贴吧系统 E-R 图（概念结构设计）</text>
+  <!-- 连线（先画线，后画实体/菱形遮挡） -->
+  <g stroke="#7a7a85" stroke-width="1.8">
+    <line x1="200" y1="480" x2="250" y2="324"/>
+    <line x1="250" y1="276" x2="680" y2="150"/>
+    <line x1="260" y1="480" x2="430" y2="244"/>
+    <line x1="430" y1="196" x2="680" y2="120"/>
+    <line x1="330" y1="480" x2="515" y2="350"/>
+    <line x1="575" y1="326" x2="720" y2="280"/>
+    <line x1="795" y1="280" x2="800" y2="356"/>
+    <line x1="800" y1="404" x2="795" y2="480"/>
+    <line x1="910" y1="130" x2="930" y2="130"/>
+    <line x1="910" y1="180" x2="990" y2="154"/>
+    <line x1="350" y1="510" x2="450" y2="430"/>
+    <line x1="570" y1="430" x2="690" y2="500"/>
+    <line x1="350" y1="540" x2="450" y2="510"/>
+    <line x1="570" y1="510" x2="690" y2="540"/>
+    <line x1="350" y1="600" x2="450" y2="590"/>
+    <line x1="570" y1="590" x2="690" y2="600"/>
+    <line x1="350" y1="660" x2="450" y2="670"/>
+    <line x1="570" y1="670" x2="690" y2="660"/>
+    <line x1="940" y1="530" x2="1020" y2="530"/>
+    <line x1="1140" y1="530" x2="1270" y2="530"/>
+    <line x1="1340" y1="480" x2="1360" y2="424"/>
+    <line x1="1400" y1="480" x2="1420" y2="400"/>
+    <!-- 发表（折线） -->
+    <polyline points="235,740 235,860 700,860" fill="none"/>
+    <polyline points="820,860 1385,860 1385,695" fill="none"/>
+    <!-- 回复点赞（折线） -->
+    <polyline points="300,740 300,960 890,960" fill="none"/>
+    <polyline points="1010,960 1430,960 1430,695" fill="none"/>
+  </g>
+  <!-- 基数标注 -->
+  <g font-family="Microsoft YaHei" font-size="15" font-weight="bold" fill="#b04a4a">
+    <text x="215" y="468">1</text><text x="655" y="143">N</text>
+    <text x="278" y="468">M</text><text x="655" y="112">N</text>
+    <text x="348" y="468">M</text><text x="690" y="300">N</text>
+    <text x="805" y="300">1</text><text x="805" y="466">N</text>
+    <text x="368" y="505">1</text><text x="662" y="492">N</text>
+    <text x="368" y="548">M</text><text x="662" y="532">N</text>
+    <text x="368" y="608">M</text><text x="662" y="592">N</text>
+    <text x="368" y="672">M</text><text x="662" y="652">N</text>
+    <text x="955" y="518">1</text><text x="1238" y="518">N</text>
+    <text x="1330" y="466">1</text><text x="1428" y="466">N</text>
+    <text x="221" y="812">1</text><text x="1360" y="848">N</text>
+    <text x="286" y="912">M</text><text x="1405" y="948">N</text>
+  </g>
+  <!-- 实体 -->
+  <g font-family="Microsoft YaHei">
+    <rect x="120" y="480" width="230" height="260" rx="4" fill="#eef3fc" stroke="#3a6ea5" stroke-width="2.5"/>
+    <rect x="120" y="480" width="230" height="34" rx="4" fill="#dbe7f7" stroke="#3a6ea5" stroke-width="2.5"/>
+    <text x="235" y="503" text-anchor="middle" font-size="17" font-weight="bold" fill="#2a4e78">用户 users</text>
+    <g font-size="13.5" fill="#1a1a1a">
+      <text x="134" y="540">id（PK）</text><text x="134" y="564">account 账号（唯一）</text><text x="134" y="588">password 密码</text>
+      <text x="134" y="612">username 昵称</text><text x="134" y="636">avatar 头像 / background 背景图</text>
+      <text x="134" y="660">user_type 类型（USER/ADMIN/MODERATOR）</text>
+      <text x="134" y="684">banned 封禁 / created_at 注册时间</text>
+    </g>
+    <rect x="680" y="90" width="230" height="190" rx="4" fill="#eef8ee" stroke="#3f7f3f" stroke-width="2.5"/>
+    <rect x="680" y="90" width="230" height="34" rx="4" fill="#d9efd9" stroke="#3f7f3f" stroke-width="2.5"/>
+    <text x="795" y="113" text-anchor="middle" font-size="17" font-weight="bold" fill="#2a5a2a">版块 boards</text>
+    <g font-size="13.5" fill="#1a1a1a">
+      <text x="694" y="150">id（PK）</text><text x="694" y="174">name 版名（唯一）</text><text x="694" y="198">icon 图标</text>
+      <text x="694" y="222">parent_id 父版块</text><text x="694" y="246">creator_id 创建人 / hot_score 热度</text>
+    </g>
+    <rect x="690" y="480" width="250" height="290" rx="4" fill="#fdf0f0" stroke="#b04a4a" stroke-width="2.5"/>
+    <rect x="690" y="480" width="250" height="34" rx="4" fill="#f7dcdc" stroke="#b04a4a" stroke-width="2.5"/>
+    <text x="815" y="503" text-anchor="middle" font-size="17" font-weight="bold" fill="#7a3030">帖子 posts</text>
+    <g font-size="13.5" fill="#1a1a1a">
+      <text x="704" y="540">id（PK）</text><text x="704" y="564">board_name 所属版面</text><text x="704" y="588">user_id 作者</text>
+      <text x="704" y="612">title 标题 / content 正文</text><text x="704" y="636">image_url 配图</text>
+      <text x="704" y="660">likes 点赞数 / favorites 收藏数</text>
+      <text x="704" y="684">views 浏览量 / created_at 发布时间</text>
+    </g>
+    <rect x="1270" y="480" width="230" height="215" rx="4" fill="#f5f0fb" stroke="#6b4fa0" stroke-width="2.5"/>
+    <rect x="1270" y="480" width="230" height="34" rx="4" fill="#e8def5" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="1385" y="503" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a3572">回复 replies</text>
+    <g font-size="13.5" fill="#1a1a1a">
+      <text x="1284" y="540">id（PK）</text><text x="1284" y="564">post_id 所属帖子</text><text x="1284" y="588">user_id 作者</text>
+      <text x="1284" y="612">parent_id 父回复（楼中楼）</text>
+      <text x="1284" y="636">content 内容 / likes 点赞数</text><text x="1284" y="660">created_at 时间</text>
+    </g>
+    <rect x="120" y="960" width="230" height="140" rx="4" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2.5"/>
+    <rect x="120" y="960" width="230" height="34" rx="4" fill="#f7e3c8" stroke="#b07a2a" stroke-width="2.5"/>
+    <text x="235" y="983" text-anchor="middle" font-size="17" font-weight="bold" fill="#7a5418">校园公告 site_notice</text>
+    <g font-size="13.5" fill="#1a1a1a">
+      <text x="134" y="1020">id（固定为 1，单行表）</text>
+      <text x="134" y="1044">title 公告标题</text>
+      <text x="134" y="1068">content 公告内容 / updated_at 更新时间</text>
+    </g>
+  </g>
+  <!-- 联系（菱形） -->
+  <g font-family="Microsoft YaHei" font-size="15.5" font-weight="bold" text-anchor="middle">
+    <polygon points="250,276 310,300 250,324 190,300" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="250" y="306">创建</text>
+    <polygon points="430,196 490,220 430,244 370,220" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="430" y="226">关注</text>
+    <polygon points="575,326 635,350 575,374 515,350" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="575" y="356">管理</text>
+    <polygon points="800,356 860,380 800,404 740,380" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="800" y="386">归属</text>
+    <polygon points="990,106 1050,130 990,154 930,130" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="990" y="136">包含</text>
+    <polygon points="510,406 570,430 510,454 450,430" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="510" y="436">发布</text>
+    <polygon points="510,486 570,510 510,534 450,510" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="510" y="516">点赞</text>
+    <polygon points="510,566 570,590 510,614 450,590" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="510" y="596">收藏</text>
+    <polygon points="510,646 570,670 510,694 450,670" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="510" y="676">浏览</text>
+    <polygon points="1080,506 1140,530 1080,554 1020,530" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="1080" y="536">拥有</text>
+    <polygon points="1360,376 1420,400 1360,424 1300,400" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="1360" y="406">嵌套</text>
+    <polygon points="760,836 820,860 760,884 700,860" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="760" y="866">发表</text>
+    <polygon points="950,936 1010,960 950,984 890,960" fill="#fffbe8" stroke="#d9b44a" stroke-width="2"/><text x="950" y="966">回复点赞</text>
+  </g>
+  <text x="990" y="94" text-anchor="middle" font-family="Microsoft YaHei" font-size="13.5" fill="#7a5418">parent_id（主版面—子版面，自关联）</text>
+  <text x="1445" y="440" text-anchor="middle" font-family="Microsoft YaHei" font-size="13.5" fill="#4a3572">parent_id（楼中楼，自关联）</text>
+  <text x="800" y="1130" text-anchor="middle" font-family="Microsoft YaHei" font-size="15" fill="#666">图例：矩形 = 实体（内列主要属性）；菱形 = 联系；连线上的 1 / N / M 表示联系的基数。关注、管理、点赞、收藏、浏览、回复点赞为多对多联系，物理实现为关联表。</text>
+</svg>

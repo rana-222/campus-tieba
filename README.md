@@ -8,9 +8,15 @@
 - 数据库：MySQL `campus_tieba`（首次启动自动创建数据库、数据表并初始化数据）
 
 ## 运行
-1. 安装 JDK 21、Maven 和 MySQL，并启动 MySQL 服务。
-2. 按需设置 `DB_USERNAME`、`DB_PASSWORD`，默认账号为 `root`、默认密码为空。
-3. 在项目根目录运行 `mvn spring-boot:run`，访问 `http://localhost:8080`。
+
+### 方式一：桌面启动器（推荐）
+1. 安装 JDK、Maven、MySQL 与 .NET 8 桌面运行时，并启动 MySQL 服务。
+2. 双击项目根目录的 `Tieba.exe`：自动清理 8080 端口 → 启动后端 → 就绪后在内嵌浏览器窗口中打开应用，关闭窗口即退出后端。
+3. 启动器源码位于 `launcher/`（C# WinForms + WebView2），可用 `dotnet publish` 重新构建。
+
+### 方式二：命令行
+1. 按需设置 `DB_USERNAME`、`DB_PASSWORD`。
+2. 在项目根目录运行 `mvn spring-boot:run`，访问 `http://localhost:8080`。
 
 演示账号：`student / Student123!`；管理员：`admin / Admin123!`。
 

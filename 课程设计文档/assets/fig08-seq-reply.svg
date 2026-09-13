@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 780" width="1300" height="780">
+  <rect width="1300" height="780" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#555"/></marker>
+  </defs>
+  <!-- 参与者 -->
+  <g font-family="Microsoft YaHei" font-size="15.5" font-weight="bold" text-anchor="middle">
+    <rect x="55" y="20" width="150" height="46" rx="6" fill="#eef3fc" stroke="#3a6ea5" stroke-width="2"/><text x="130" y="49">用户浏览器</text>
+    <rect x="265" y="20" width="160" height="46" rx="6" fill="#fdf0f0" stroke="#b04a4a" stroke-width="2"/><text x="345" y="49">PostController</text>
+    <rect x="475" y="20" width="170" height="46" rx="6" fill="#eef8ee" stroke="#3f7f3f" stroke-width="2"/><text x="560" y="49">UserRepository</text>
+    <rect x="685" y="20" width="170" height="46" rx="6" fill="#f5f0fb" stroke="#6b4fa0" stroke-width="2"/><text x="770" y="49">PostRepository</text>
+    <rect x="895" y="20" width="130" height="46" rx="6" fill="#ececec" stroke="#555" stroke-width="2"/><text x="960" y="49">MySQL</text>
+    <rect x="1075" y="20" width="170" height="46" rx="6" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="1160" y="49">UserController</text>
+  </g>
+  <!-- 生命线 -->
+  <g stroke="#b8b8c0" stroke-width="1.5" stroke-dasharray="6,6">
+    <line x1="130" y1="66" x2="130" y2="672"/>
+    <line x1="345" y1="66" x2="345" y2="672"/>
+    <line x1="560" y1="66" x2="560" y2="672"/>
+    <line x1="770" y1="66" x2="770" y2="672"/>
+    <line x1="960" y1="66" x2="960" y2="672"/>
+    <line x1="1160" y1="66" x2="1160" y2="672"/>
+  </g>
+  <!-- 阶段标签 -->
+  <g font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="#fff">
+    <rect x="60" y="82" width="70" height="26" rx="4" fill="#3a6ea5"/><text x="95" y="100" text-anchor="middle">回 复</text>
+    <rect x="60" y="352" width="70" height="26" rx="4" fill="#b04a4a"/><text x="95" y="370" text-anchor="middle">帖子点赞</text>
+    <rect x="60" y="522" width="70" height="26" rx="4" fill="#b07a2a"/><text x="95" y="540" text-anchor="middle">通 知</text>
+  </g>
+  <!-- 消息 -->
+  <g stroke="#555" stroke-width="2" font-family="Microsoft YaHei" font-size="14" fill="#1a1a1a">
+    <line x1="130" y1="120" x2="341" y2="120" marker-end="url(#arr)"/>
+    <text x="236" y="110" text-anchor="middle">1. POST /api/posts/{id}/replies {userId, parentId, content}</text>
+    <line x1="345" y1="158" x2="556" y2="158" marker-end="url(#arr)"/>
+    <text x="450" y="148" text-anchor="middle">2. findById(userId)（封禁校验）</text>
+    <line x1="560" y1="190" x2="349" y2="190" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="452" y="180" text-anchor="middle">3. User</text>
+    <line x1="345" y1="228" x2="766" y2="228" marker-end="url(#arr)"/>
+    <text x="555" y="218" text-anchor="middle">4. reply(postId, userId, parentId, content)</text>
+    <line x1="770" y1="266" x2="956" y2="266" marker-end="url(#arr)"/>
+    <text x="863" y="256" text-anchor="middle">5. INSERT INTO replies（父回复须属于本帖）</text>
+    <line x1="960" y1="298" x2="774" y2="298" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="867" y="288" text-anchor="middle">6. OK / 拒绝</text>
+    <line x1="345" y1="330" x2="134" y2="330" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="236" y="320" text-anchor="middle">7. 200 "回复成功"（封禁 403 / 参数非法 400）</text>
+
+    <line x1="130" y1="390" x2="341" y2="390" marker-end="url(#arr)"/>
+    <text x="236" y="380" text-anchor="middle">8. POST /api/posts/{id}/like {userId}</text>
+    <line x1="345" y1="424" x2="766" y2="424" marker-end="url(#arr)"/>
+    <text x="555" y="414" text-anchor="middle">9. toggleLike(userId, postId)</text>
+    <line x1="770" y1="458" x2="956" y2="458" marker-end="url(#arr)"/>
+    <text x="863" y="448" text-anchor="middle">10. INSERT/DELETE user_likes ＋ UPDATE posts.likes</text>
+    <line x1="960" y1="490" x2="774" y2="490" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="867" y="480" text-anchor="middle">11. {likes, liked}</text>
+    <line x1="345" y1="510" x2="134" y2="510" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="236" y="500" text-anchor="middle">12. 200 {likes, liked}（幂等切换）</text>
+
+    <line x1="130" y1="560" x2="1156" y2="560" marker-end="url(#arr)"/>
+    <text x="643" y="550" text-anchor="middle">13. GET /api/users/{id}/notifications（进入通知中心 / 轮询红点）</text>
+    <line x1="1160" y1="594" x2="564" y2="594" marker-end="url(#arr)"/>
+    <text x="862" y="584" text-anchor="middle">14. notifications(userId)：聚合 user_likes / reply_likes / replies</text>
+    <line x1="560" y1="626" x2="1156" y2="626" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="858" y="616" text-anchor="middle">15. {likes:[收到的赞], replies:[收到的回复]}</text>
+    <line x1="1160" y1="658" x2="134" y2="658" stroke-dasharray="7,5" marker-end="url(#arr)"/>
+    <text x="647" y="648" text-anchor="middle">16. 200 JSON（红点 = 最新通知时间 vs localStorage 已读标记，按账号隔离）</text>
+  </g>
+  <rect x="170" y="700" width="1060" height="62" rx="6" fill="#fffbe8" stroke="#d9b44a" stroke-width="1.5"/>
+  <text x="700" y="723" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#6a5a1a">回复点赞走 /api/posts/{id}/replies/{replyId}/like，同样采用幂等切换并计入被赞用户总获赞数；</text>
+  <text x="700" y="747" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" fill="#6a5a1a">通知数据不单独建表，而是由三张互动表实时聚合生成，保证与业务数据强一致</text>
+</svg>

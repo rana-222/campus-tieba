@@ -30,3 +30,11 @@ style_check*.txt
 
 # 根目录下过时的旧版数据库脚本与二进制（现行版本在 src/main/resources/database/）
 /database/
+
+# C# 启动器（Tieba.exe）构建产物
+launcher/bin/
+launcher/obj/
+launcher/publish/
+/Tieba.exe
+/Tieba.exe.WebView2/
+**/Tieba.exe.WebView2/

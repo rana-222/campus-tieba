@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 920" width="1180" height="920">
+  <rect x="0" y="0" width="1180" height="920" fill="#ffffff"/>
+  <!-- 关联连线（先画线，后画椭圆遮挡线头） -->
+  <g stroke="#8a8a95" stroke-width="1.8">
+    <line x1="130" y1="230" x2="400" y2="130"/>
+    <line x1="130" y1="230" x2="400" y2="210"/>
+    <line x1="130" y1="230" x2="630" y2="130"/>
+    <line x1="130" y1="230" x2="400" y2="690"/>
+    <line x1="130" y1="560" x2="400" y2="290"/>
+    <line x1="130" y1="560" x2="400" y2="370"/>
+    <line x1="130" y1="560" x2="400" y2="450"/>
+    <line x1="130" y1="560" x2="400" y2="530"/>
+    <line x1="130" y1="560" x2="400" y2="610"/>
+    <line x1="130" y1="560" x2="400" y2="770"/>
+    <line x1="130" y1="560" x2="630" y2="210"/>
+    <line x1="130" y1="560" x2="630" y2="290"/>
+    <line x1="130" y1="560" x2="630" y2="370"/>
+    <line x1="130" y1="560" x2="630" y2="450"/>
+    <line x1="1055" y1="230" x2="860" y2="130"/>
+    <line x1="1055" y1="230" x2="860" y2="290"/>
+    <line x1="1055" y1="560" x2="860" y2="130"/>
+    <line x1="1055" y1="560" x2="860" y2="210"/>
+    <line x1="1055" y1="560" x2="860" y2="290"/>
+    <line x1="1055" y1="560" x2="860" y2="370"/>
+    <line x1="1055" y1="560" x2="860" y2="450"/>
+    <line x1="1055" y1="560" x2="860" y2="530"/>
+  </g>
+  <!-- 泛化关系：普通用户 ▷ 游客；系统管理员 ▷ 版主 -->
+  <line x1="130" y1="490" x2="130" y2="300" stroke="#555" stroke-width="2"/>
+  <polygon points="130,282 121,302 139,302" fill="#ffffff" stroke="#555" stroke-width="2"/>
+  <line x1="1055" y1="490" x2="1055" y2="300" stroke="#555" stroke-width="2"/>
+  <polygon points="1055,282 1046,302 1064,302" fill="#ffffff" stroke="#555" stroke-width="2"/>
+  <!-- 系统边界 -->
+  <rect x="295" y="50" width="665" height="845" rx="10" fill="#fcfcfd" stroke="#8a8a95" stroke-width="2.5"/>
+  <text x="627" y="84" text-anchor="middle" font-family="Microsoft YaHei" font-size="23" font-weight="bold" fill="#444">校园贴吧系统</text>
+  <!-- 用例椭圆 -->
+  <g font-family="Microsoft YaHei" font-size="19" text-anchor="middle" fill="#1a1a1a">
+    <ellipse cx="400" cy="130" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="137">注册账户</text>
+    <ellipse cx="400" cy="210" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="217">登录系统</text>
+    <ellipse cx="400" cy="290" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="297">维护个人信息</text>
+    <ellipse cx="400" cy="370" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="377">上传头像/背景</text>
+    <ellipse cx="400" cy="450" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="457">查看通知</text>
+    <ellipse cx="400" cy="530" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="537">浏览记录/收藏</text>
+    <ellipse cx="400" cy="610" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="617">界面设置</text>
+    <ellipse cx="400" cy="690" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="697">搜索帖子/用户</text>
+    <ellipse cx="400" cy="770" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="400" y="777">关注版面</text>
+    <ellipse cx="630" cy="130" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="630" y="137">浏览帖子</text>
+    <ellipse cx="630" cy="210" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="630" y="217">发布/编辑帖子</text>
+    <ellipse cx="630" cy="290" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="630" y="297">发表回复</text>
+    <ellipse cx="630" cy="370" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="630" y="377">回复点赞</text>
+    <ellipse cx="630" cy="450" rx="90" ry="27" fill="#eef4fb" stroke="#3a6ea5" stroke-width="2"/><text x="630" y="457">帖子点赞/收藏</text>
+    <ellipse cx="860" cy="130" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="137">版面管理</text>
+    <ellipse cx="860" cy="210" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="217">任命版主</text>
+    <ellipse cx="860" cy="290" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="297">删除帖子/回复</text>
+    <ellipse cx="860" cy="370" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="377">封禁/解封用户</text>
+    <ellipse cx="860" cy="450" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="457">删除用户</text>
+    <ellipse cx="860" cy="530" rx="90" ry="27" fill="#fdf2e7" stroke="#b07a2a" stroke-width="2"/><text x="860" y="537">编辑校园公告</text>
+  </g>
+  <!-- 参与者（小人） -->
+  <g stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <circle cx="130" cy="178" r="16" fill="#fff"/>
+    <line x1="130" y1="194" x2="130" y2="240"/>
+    <line x1="106" y1="212" x2="154" y2="212"/>
+    <line x1="130" y1="240" x2="110" y2="270"/>
+    <line x1="130" y1="240" x2="150" y2="270"/>
+    <circle cx="130" cy="508" r="16" fill="#fff"/>
+    <line x1="130" y1="524" x2="130" y2="570"/>
+    <line x1="106" y1="542" x2="154" y2="542"/>
+    <line x1="130" y1="570" x2="110" y2="600"/>
+    <line x1="130" y1="570" x2="150" y2="600"/>
+    <circle cx="1055" cy="178" r="16" fill="#fff"/>
+    <line x1="1055" y1="194" x2="1055" y2="240"/>
+    <line x1="1031" y1="212" x2="1079" y2="212"/>
+    <line x1="1055" y1="240" x2="1035" y2="270"/>
+    <line x1="1055" y1="240" x2="1075" y2="270"/>
+    <circle cx="1055" cy="508" r="16" fill="#fff"/>
+    <line x1="1055" y1="524" x2="1055" y2="570"/>
+    <line x1="1031" y1="542" x2="1079" y2="542"/>
+    <line x1="1055" y1="570" x2="1035" y2="600"/>
+    <line x1="1055" y1="570" x2="1075" y2="600"/>
+  </g>
+  <g font-family="Microsoft YaHei" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    <text x="130" y="300">游客</text>
+    <text x="130" y="632">普通用户</text>
+    <text x="1055" y="300">版主</text>
+    <text x="1055" y="632">系统管理员</text>
+  </g>
+  <text x="590" y="910" text-anchor="middle" font-family="Microsoft YaHei" font-size="16" fill="#666">说明：普通用户继承游客的全部用例；版主、系统管理员继承普通用户的全部用例（泛化关系如空心三角箭头所示）</text>
+</svg>

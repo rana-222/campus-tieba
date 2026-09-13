@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <rect width="1200" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#555"/></marker>
+  </defs>
+  <!-- 参与者 -->
+  <g font-family="Microsoft YaHei" font-size="16" font-weight="bold" text-anchor="middle">
+    <rect x="60" y="20" width="180" height="46" rx="6" fill="#eef3fc" stroke="#3a6ea5" stroke-width="2"/><text x="150" y="49">用户浏览器</text>
+    <rect x="360" y="20" width="180" height="46" rx="6" fill="#fdf0f0" stroke="#b04a4a" stroke-width="2"/><text x="450" y="49">AuthController</text>
+    <rect x="560" y="20" width="180" height="46" rx="6" fill="#eef8ee" stroke="#3f7f3f" stroke-width="2"/><text x="650" y="49">AuthService</text>
+    <rect x="760" y="20" width="190" height="46" rx="6" fill="#f5f0fb" stroke="#6b4fa0" stroke-width="2"/><text x="855" y="49">UserRepository</text>
+    <rect x="980" y="20" width="170" height="46" rx="6" fill="#ececec" stroke="#555" stroke-width="2"/><text x="1065" y="49">MySQL</text>
+  </g>
+  <!-- 生命线 -->
+  <g stroke="#b8b8c0" stroke-width="1.5" stroke-dasharray="6,6">
+    <line x1="150" y1="66" x2="150" y2="410"/>
+    <line x1="450" y1="66" x2="450" y2="410"/>
+    <line x1="650" y1="66" x2="650" y2="410"/>
+    <line x1="855" y1="66" x2="855" y2="410"/>
+    <line x1="1065" y1="66" x2="1065" y2="410"/>
+  </g>
+  <!-- 消息 -->
+  <g stroke="#555" stroke-width="2" font-family="Microsoft YaHei" font-size="15" fill="#1a1a1a">
+    <line x1="150" y1="120" x2="446" y2="120" marker-end="url(#ar)"/>
+    <text x="298" y="110" text-anchor="middle">1. POST /api/auth/login {account, password, admin}</text>
+    <line x1="450" y1="165" x2="646" y2="165" marker-end="url(#ar)"/>
+    <text x="548" y="155" text-anchor="middle">2. login(account, password, admin)</text>
+    <line x1="650" y1="210" x2="851" y2="210" marker-end="url(#ar)"/>
+    <text x="753" y="200" text-anchor="middle">3. findByAccount(account)</text>
+    <line x1="855" y1="255" x2="1061" y2="255" marker-end="url(#ar)"/>
+    <text x="958" y="245" text-anchor="middle">4. SELECT … WHERE account=?</text>
+    <line x1="1065" y1="295" x2="859" y2="295" stroke-dasharray="7,5" marker-end="url(#ar)"/>
+    <text x="962" y="285" text-anchor="middle">5. 用户记录 / null</text>
+    <line x1="855" y1="335" x2="654" y2="335" stroke-dasharray="7,5" marker-end="url(#ar)"/>
+    <text x="755" y="325" text-anchor="middle">6. User 对象 / null</text>
+    <line x1="650" y1="375" x2="700" y2="375"/><line x1="700" y1="375" x2="700" y2="398"/><line x1="700" y1="398" x2="654" y2="398" marker-end="url(#ar)"/>
+    <text x="712" y="392">7. 校验密码 / 封禁状态 / 入口匹配</text>
+    <line x1="650" y1="425" x2="454" y2="425" stroke-dasharray="7,5" marker-end="url(#ar)"/>
+    <text x="552" y="415" text-anchor="middle">8. User（校验通过）</text>
+  </g>
+  <line x1="450" y1="462" x2="154" y2="462" stroke="#555" stroke-width="2" stroke-dasharray="7,5" marker-end="url(#ar)"/>
+  <text x="302" y="452" text-anchor="middle" font-family="Microsoft YaHei" font-size="15" fill="#1a1a1a">9. 200 {user}（失败时 400 {message}）</text>
+  <rect x="190" y="490" width="820" height="52" rx="6" fill="#fffbe8" stroke="#d9b44a" stroke-width="1.5"/>
+  <text x="600" y="500" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" fill="#6a5a1a">浏览器将用户信息写入 sessionStorage 后跳转 forum-main.html；</text>
+  <text x="600" y="522" text-anchor="middle" font-family="Microsoft YaHei" font-size="14.5" fill="#6a5a1a">密码错误、账号封禁或入口不匹配（管理员账号走用户入口）时提示错误信息</text>
+</svg>

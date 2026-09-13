@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 830" width="1200" height="830">
+  <rect width="1200" height="830" fill="#ffffff"/>
+  <!-- 根节点与总线连线（先画线后画框） -->
+  <g stroke="#7a7a85" stroke-width="2" fill="none">
+    <line x1="600" y1="86" x2="600" y2="112"/>
+    <line x1="20" y1="112" x2="1180" y2="112"/>
+    <line x1="215" y1="112" x2="215" y2="150"/>
+    <line x1="600" y1="112" x2="600" y2="150"/>
+    <line x1="985" y1="112" x2="985" y2="150"/>
+    <line x1="20" y1="112" x2="20" y2="488"/>
+    <line x1="20" y1="488" x2="215" y2="488"/>
+    <line x1="215" y1="488" x2="215" y2="510"/>
+    <line x1="407" y1="112" x2="407" y2="488"/>
+    <line x1="407" y1="488" x2="600" y2="488"/>
+    <line x1="600" y1="488" x2="600" y2="510"/>
+    <line x1="1180" y1="112" x2="1180" y2="488"/>
+    <line x1="1180" y1="488" x2="985" y2="488"/>
+    <line x1="985" y1="488" x2="985" y2="510"/>
+  </g>
+  <!-- 根节点 -->
+  <rect x="460" y="30" width="280" height="56" rx="8" fill="#eef3fc" stroke="#3a6ea5" stroke-width="2.5"/>
+  <text x="600" y="66" text-anchor="middle" font-family="Microsoft YaHei" font-size="22" font-weight="bold" fill="#2a4e78">校园贴吧系统</text>
+  <!-- 模块框：标题栏 + 功能列表 -->
+  <g font-family="Microsoft YaHei">
+    <rect x="40" y="150" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="40" y="150" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="215" y="180" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">账户管理模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="62" y="228">•  用户注册（密码强度校验）</text>
+      <text x="62" y="266">•  用户登录（用户 / 管理员双入口）</text>
+      <text x="62" y="304">•  个人资料维护（昵称 / 账号 / 密码）</text>
+      <text x="62" y="342">•  头像与个人主页背景上传</text>
+      <text x="62" y="380">•  账号封禁状态校验</text>
+    </g>
+    <rect x="425" y="150" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="425" y="150" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="600" y="180" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">帖子管理模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="447" y="228">•  信息流浏览（按版面 / 推荐流）</text>
+      <text x="447" y="266">•  发布帖子（含图片上传与旧图清理）</text>
+      <text x="447" y="304">•  编辑 / 删除帖子（作者或管理者）</text>
+      <text x="447" y="342">•  帖子点赞（幂等切换）</text>
+      <text x="447" y="380">•  帖子收藏 / 取消收藏</text>
+      <text x="447" y="418">•  浏览量统计（按用户去重）</text>
+    </g>
+    <rect x="810" y="150" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="810" y="150" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="985" y="180" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">回复互动模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="832" y="228">•  发表回复</text>
+      <text x="832" y="266">•  楼中楼回复（二级嵌套）</text>
+      <text x="832" y="304">•  回复点赞</text>
+      <text x="832" y="342">•  删除回复（作者或管理者）</text>
+    </g>
+    <rect x="40" y="510" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="40" y="510" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="215" y="540" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">个人中心模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="62" y="588">•  我的主页（发帖列表 / 统计）</text>
+      <text x="62" y="626">•  通知中心（收到的赞 / 收到的回复）</text>
+      <text x="62" y="664">•  浏览记录（去重，保留最新）</text>
+      <text x="62" y="702">•  我的收藏</text>
+      <text x="62" y="740">•  关注的版面</text>
+      <text x="62" y="778">•  界面设置（字号 / 中英文 / 透明度）</text>
+    </g>
+    <rect x="425" y="510" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="425" y="510" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="600" y="540" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">搜索服务模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="447" y="588">•  帖子关键字搜索（分页）</text>
+      <text x="447" y="626">•  用户模糊搜索（昵称 / 账号）</text>
+      <text x="447" y="664">•  热门版面浏览</text>
+    </g>
+    <rect x="810" y="510" width="350" height="310" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+    <rect x="810" y="510" width="350" height="46" rx="6" fill="#f0f0f5" stroke="#666" stroke-width="2"/>
+    <text x="985" y="540" text-anchor="middle" font-size="19" font-weight="bold" fill="#333">系统管理模块</text>
+    <g font-size="16.5" fill="#1a1a1a">
+      <text x="832" y="588">•  版面管理（新增 / 删除）</text>
+      <text x="832" y="626">•  版主任命与权限管理</text>
+      <text x="832" y="664">•  封禁 / 解封用户</text>
+      <text x="832" y="702">•  删除用户（级联清理数据）</text>
+      <text x="832" y="740">•  帖子 / 回复内容管理</text>
+      <text x="832" y="778">•  校园公告编辑</text>
+    </g>
+  </g>
+</svg>
