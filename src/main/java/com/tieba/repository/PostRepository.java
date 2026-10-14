@@ -35,11 +35,11 @@ public class PostRepository {
     }
 
     public List<Post> findRecommended() {
-        return jdbc.query(SELECT + " WHERE p.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) ORDER BY p.likes DESC, p.created_at DESC", this::map);
+        return jdbc.query(SELECT + " ORDER BY p.likes DESC, p.created_at DESC", this::map);
     }
 
     public List<Post> findRecommended(String board) {
-        return jdbc.query(SELECT + " WHERE p.board_name = ? AND p.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) ORDER BY p.likes DESC, p.created_at DESC", this::map, board);
+        return jdbc.query(SELECT + " WHERE p.board_name = ? ORDER BY p.likes DESC, p.created_at DESC", this::map, board);
     }
 
     public SearchResult<Post> search(String query, int page, int size) {

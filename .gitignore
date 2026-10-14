@@ -38,3 +38,10 @@ launcher/publish/
 /Tieba.exe
 /Tieba.exe.WebView2/
 **/Tieba.exe.WebView2/
+
+# 发布打包文件
+/commit.zip
+generate_report.py
+
+# Office 临时文件
+~$*
